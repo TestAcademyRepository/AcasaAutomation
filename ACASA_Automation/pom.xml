@@ -3,4 +3,30 @@
   <groupId>imtestacademy</groupId>
   <artifactId>ACASA_Automation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.6.2</version>
+</dependency>  
+	  
+	  
+	  
+	  
+  </dependencies>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </project>
