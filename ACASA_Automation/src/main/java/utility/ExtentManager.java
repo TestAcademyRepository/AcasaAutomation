@@ -18,15 +18,17 @@ public class ExtentManager
 		htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/ExtentReport/AcasaAutomationReport.html");
 		htmlReporter.config().setDocumentTitle("Automation Test Report");
 		htmlReporter.config().setReportName("Acasa Test Automation Report");
-		htmlReporter.config().setTheme(Theme.STANDARD);
+		htmlReporter.config().setTheme(Theme.DARK);
 		
 		
 
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-		
+		extent.setSystemInfo("Comapny Name", "Test Academy Software Testing Services Nagpur");
 		extent.setSystemInfo("ProjectName", "ACASA");
-		extent.setSystemInfo("Tester1", "Umair Aafaque");
+		extent.setSystemInfo("Client", "Dubai UAE");
+		extent.setSystemInfo("Product Manager", "Imran Ur Rahim");
+		extent.setSystemInfo("Tester1", "Mohammad Umair Aafaque");
 		extent.setSystemInfo("Tester2", "Mohammad Usman");
 		extent.setSystemInfo("OS", "Windows");
 		extent.setSystemInfo("Browser", "Chrome");
