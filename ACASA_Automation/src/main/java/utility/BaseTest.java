@@ -34,7 +34,8 @@ public class BaseTest
 	{
 		driver = new ChromeDriver();
 		System.out.println("Test on Chrome");
-		driver.get("https://www.acasa.ae/");
+		//driver.get("https://www.acasa.ae/");
+		driver.get(TestUtils.getPropertiesData("url"));
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
 	}

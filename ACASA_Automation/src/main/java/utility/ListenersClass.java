@@ -7,11 +7,10 @@ import org.testng.ITestResult;
 public class ListenersClass extends ExtentManager implements ITestListener
 {
 
-	@Override
+	
 	public void onTestStart(ITestResult result) 
 	{
-	
-		ITestListener.super.onTestStart(result);
+		test = extent.createTest(result.getMethod().getDescription()); 
 	}
 
 	@Override
@@ -22,8 +21,7 @@ public class ListenersClass extends ExtentManager implements ITestListener
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestFailure(result);
+		
 	}
 
 	@Override
