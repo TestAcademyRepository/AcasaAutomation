@@ -14,28 +14,26 @@ public class ExtentManager
 	
 	public static void setExtent() 
 	{
-	
+		
+		//htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/ExtentReport/"+"MyReport_"+BaseClass.getCurrentTime()+".html");
 		htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/ExtentReport/AcasaAutomationReport.html");
 		htmlReporter.config().setDocumentTitle("Automation Test Report");
 		htmlReporter.config().setReportName("Acasa Test Automation Report");
 		htmlReporter.config().setTheme(Theme.DARK);
 		
-		
-
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Comapny Name", "Test Academy Software Testing Services Nagpur");
 		extent.setSystemInfo("ProjectName", "ACASA");
 		extent.setSystemInfo("Client", "Dubai UAE");
 		extent.setSystemInfo("Product Manager", "Imran Ur Rahim");
-		extent.setSystemInfo("Tester1", "Mohammad Umair Aafaque");
-		extent.setSystemInfo("Tester2", "Mohammad Usman");
+		extent.setSystemInfo("SDET Engineer", "Mohammad Umair Aafaque");
+		extent.setSystemInfo("SDET Engineer", "Mohammad Usman");
 		extent.setSystemInfo("OS", "Windows");
 		extent.setSystemInfo("Browser", "Chrome");
 	}
 		
 	
-		
 	public static void endReport() 
 	{
 		extent.flush();

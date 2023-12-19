@@ -48,7 +48,8 @@ public class BaseTest
 	public boolean isElementVisible(WebElement element,String msg)
 	{
 		boolean result = false;
-		try{
+		try
+		{
 			wait = new WebDriverWait (driver,Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(element));
 
@@ -76,22 +77,17 @@ public class BaseTest
 		boolean result = false;
 		try 
 		{
-
-			
 			element.click();
 			TestUtils.log().info(msg);
 			result = true;
-			
 		}
 		catch(Exception e)
 		{
 			TestUtils.log().error("Failed:"+msg+" | "+ e);
-			
 			result = false;
 		}
 		return result;
 
-		
 	}
 
 

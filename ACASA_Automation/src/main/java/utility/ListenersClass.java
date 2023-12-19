@@ -25,54 +25,54 @@ public class ListenersClass extends ExtentManager implements ITestListener
 		test = extent.createTest(result.getMethod().getDescription()); 
 	}
 
-//	@Override
-//	public void onTestSuccess(ITestResult result) {
-//		// TODO Auto-generated method stub
-//		ITestListener.super.onTestSuccess(result);
-//	}
-
-	
 	public void onTestFailure(ITestResult result) 
 	{
-		takesScreenshot = (TakesScreenshot) BaseTest.driver;
+		takesScreenshot = (TakesScreenshot)BaseTest.driver;
 		File screenshot = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		
-	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd.HH.mm.ss");
-	LocalDateTime now = LocalDateTime.now();
-	String currentDate = dtf.format(now);
-	System.out.println("Current date: "+currentDate);
-		
-	String path="./screenshots/"+currentDate+"_"+result.getName()+" Failed"+".png";
-		
-	System.out.println("screenshot path:- "+path);
-	String base64="";
-	try {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd.HH.mm.ss");
+		LocalDateTime now = LocalDateTime.now();
+		String currentDate = dtf.format(now);
+		System.out.println("Current date: "+currentDate);
+		String path="./screenshots/"+currentDate+"_"+result.getName()+" Failed"+".png";
+		System.out.println("screenshot path:- "+path);
+		String base64="";
+	try 
+	{
 		FileUtils.copyFile(screenshot, new File(path));
 		FileInputStream is = new FileInputStream(path);
 		byte[] ssByte = IOUtils.toByteArray(is);
 		base64 = Base64.encodeBase64String(ssByte);
-	} catch (IOException e) {
+	} 
+	catch (IOException e) 
+	{
 		e.printStackTrace();
 	}
 	
 //this code will add the screenshot to the ExtentReport	
 	if (result.getStatus() == ITestResult.FAILURE) 
 	{
-		try {
+		try 
+		{
 			test.log(Status.FAIL,
 						MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.RED));
 			test.log(Status.FAIL,
 						MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
-
 			test.addScreenCaptureFromBase64String(base64);
-	
-		} catch (Exception e) {
+		} 
+		catch(Exception e) 
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	}
+	
+//	@Override
+//	public void onTestSuccess(ITestResult result) {
+//		// TODO Auto-generated method stub
+//		ITestListener.super.onTestSuccess(result);
+//	}
 
 //	@Override
 //	public void onTestSkipped(ITestResult result) {
