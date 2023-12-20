@@ -37,15 +37,15 @@ public class HomePageBody extends BaseTest
 			BaseTest.explicitWaitMethod(driver, learnMore);
 			bt.isElementVisible(learnMore, "learnMore button is visible");
 			bt.clickElement(learnMore, "learnMore button is clickable");
-			TestUtils.log().info("click on learnMore button");
-			ExtentManager.test.log(Status.PASS, "click on learnMore button");
-			return result=true;
+			
+			result=true;
 			
 		}
 		catch(Exception e) 
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "Failed to click on learnMore button");
+			result=false;
 		}
 		return result;
 	}
