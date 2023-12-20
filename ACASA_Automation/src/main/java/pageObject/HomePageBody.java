@@ -13,15 +13,13 @@ import utility.TestUtils;
 
 public class HomePageBody extends BaseTest
 {
-	//BaseTest bt = new BaseTest();
+	BaseTest bt = new BaseTest();
 	
 	@FindBy (xpath = "//a[contains(text(),'Learn More')]")
 	private WebElement learnMore;
 	
 	@FindBy (xpath = "//label[contains(@for,'pro_1932')]//label[1]")
 	private WebElement compareButton;
-	
-	
 	
 	
 	
@@ -37,17 +35,17 @@ public class HomePageBody extends BaseTest
 		try 
 		{
 			BaseTest.explicitWaitMethod(driver, learnMore);
-			isElementVisible(learnMore, "learnMore button is visible");
-			clickElement(learnMore, "learnMore button is clickable");
-			TestUtils.log().info("click on learnMore button");
-			ExtentManager.test.log(Status.PASS, "click on learnMore button");
-			return result=true;
+			bt.isElementVisible(learnMore, "learnMore button is visible");
+			bt.clickElement(learnMore, "learnMore button is clickable");
+			
+			result=true;
 			
 		}
 		catch(Exception e) 
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "Failed to click on learnMore button");
+			result=false;
 		}
 		return result;
 	}
