@@ -13,7 +13,7 @@ import utility.TestUtils;
 
 public class HomePageBody extends BaseTest
 {
-	BaseTest bt = new BaseTest();
+	
 	
 	@FindBy (xpath = "//a[contains(text(),'Learn More')]")
 	private WebElement learnMore;
@@ -35,8 +35,8 @@ public class HomePageBody extends BaseTest
 		try 
 		{
 			BaseTest.explicitWaitMethod(driver, learnMore);
-			bt.isElementVisible(learnMore, "learnMore button is visible");
-			bt.clickElement(learnMore, "learnMore button is clickable");
+			isElementVisible(learnMore, "learnMore button is visible");
+			clickElement(learnMore, "learnMore button is clickable");
 			
 			result=true;
 			

@@ -15,6 +15,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
+import com.aventstack.extentreports.Status;
+
 public class BaseTest 
 {
 	public static WebDriver driver = null;
@@ -39,46 +41,27 @@ public class BaseTest
 
 		ChromeOptions options = new ChromeOptions();
 
-		
-
 //		options.addArguments("--headless");
-
-		
-
 		options.addArguments("enable-automation");
-
 		options.addArguments("disable-infobars");
-
 		options.addArguments("--disable-notifications");
-
 		options.addArguments("--ignore-certificate-errors");
-
 		options.addArguments("--disable-extensions");
-
 		options.addArguments("--test-type");
-
 		options.addArguments("--disable-dev-shm-usage");
-
 		options.addArguments("--no-sandbox");
-
 		options.addArguments("--window-size=1920,1080");
-
 		options.addArguments("--disable-gpu");
-
 		options.addArguments("--dns-prefetch-disable");
-
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
-
 		options.setExperimentalOption("w3c", true);
-
 		options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 
 		driver = new ChromeDriver(options);
 //		driver = new ChromeDriver();
 	
-		
 		System.out.println("Test on Chrome");
-		//driver.get("https://www.acasa.ae/");
+//		driver.get("https://www.acasa.ae/");
 		driver.get(TestUtils.getPropertiesData("url"));
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
@@ -95,22 +78,25 @@ public class BaseTest
 		boolean result = false;
 		try
 		{
-			wait = new WebDriverWait (driver,Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.visibilityOf(element));
+//			wait = new WebDriverWait (driver,Duration.ofSeconds(10));
+//			wait.until(ExpectedConditions.visibilityOf(element));
 
 			if(element.isDisplayed())
 			{
 				TestUtils.log().info(msg);
+				ExtentManager.test.log(Status.PASS,msg);
 				result = true;
 			}
 			else 
 			{
 				TestUtils.log().error("Faild:"+msg);
+				ExtentManager.test.log(Status.FAIL,msg);
 				result = false;
 			}
 		}
 		catch(Exception e)
 		{
+			ExtentManager.test.log(Status.FAIL,msg);
 			TestUtils.log().error("Exception generated:"+ e);
 			result = false;
 		}
@@ -124,11 +110,13 @@ public class BaseTest
 		{
 			element.click();
 			TestUtils.log().info(msg);
+			ExtentManager.test.log(Status.PASS,msg);
 			result = true;
 		}
 		catch(Exception e)
 		{
 			TestUtils.log().error("Failed:"+msg+" | "+ e);
+			ExtentManager.test.log(Status.FAIL,msg);
 			result = false;
 		}
 		return result;
