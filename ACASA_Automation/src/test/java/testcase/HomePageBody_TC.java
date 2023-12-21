@@ -9,13 +9,16 @@ import utility.BaseTest;
 
 public class HomePageBody_TC extends BaseTest
 {
-    @Test(description = "HomePageBody_TC")
+    @Test(description = "HomePage_TC")
 	public void hpb() 
 	{
 		HomePageBody hp = new HomePageBody(driver);
 		
-		boolean checkbtn = hp.clickLearnMore();
-		Assert.assertEquals(checkbtn,true, "failed to click on btn");
+		boolean cheackbtn = hp.cheakLearnMoreBTN();
+		Assert.assertEquals(cheackbtn,true, "learnMore button is visible");
+		
+		boolean clickbtn = hp.clickLearnMore();
+		Assert.assertEquals(clickbtn,true, "failed to click on btn");
 	}
 
 }

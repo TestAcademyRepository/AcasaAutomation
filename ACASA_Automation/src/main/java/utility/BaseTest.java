@@ -78,9 +78,6 @@ public class BaseTest
 		boolean result = false;
 		try
 		{
-//			wait = new WebDriverWait (driver,Duration.ofSeconds(10));
-//			wait.until(ExpectedConditions.visibilityOf(element));
-
 			if(element.isDisplayed())
 			{
 				TestUtils.log().info(msg);

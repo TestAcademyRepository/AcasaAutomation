@@ -28,18 +28,31 @@ public class HomePageBody extends BaseTest
 		PageFactory.initElements(driver, this);
 	}
 	
-	
+	public boolean cheakLearnMoreBTN() 
+	{
+		boolean result=false;
+		try
+		{
+			BaseTest.explicitWaitMethod(driver, learnMore);
+			isElementVisible(learnMore, "learnMore button is visible");
+			result=true;
+		}
+		catch(Exception e)
+		{
+			TestUtils.log().error(e);
+			ExtentManager.test.log(Status.FAIL, "Learn more btn is not visible");
+			result=false;
+		}
+		return result;
+		
+	}
 	public boolean clickLearnMore() 
 	{
 		boolean result=false;
 		try 
 		{
-			BaseTest.explicitWaitMethod(driver, learnMore);
-			isElementVisible(learnMore, "learnMore button is visible");
 			clickElement(learnMore, "learnMore button is clickable");
-			
 			result=true;
-			
 		}
 		catch(Exception e) 
 		{
