@@ -1,6 +1,6 @@
 package pageObject;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,7 +23,7 @@ public class HomePageBody extends BaseTest
 	
 	
 	
-	public HomePageBody(WebDriver driver) 
+	public HomePageBody() 
 	{
 		PageFactory.initElements(driver, this);
 	}
@@ -44,8 +44,8 @@ public class HomePageBody extends BaseTest
 			result=false;
 		}
 		return result;
-		
 	}
+	
 	public boolean clickLearnMore() 
 	{
 		boolean result=false;

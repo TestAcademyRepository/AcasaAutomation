@@ -12,7 +12,7 @@ public class HomePageBody_TC extends BaseTest
     @Test(description = "HomePage_TC")
 	public void hpb() 
 	{
-		HomePageBody hp = new HomePageBody(driver);
+		HomePageBody hp = new HomePageBody();
 		
 		boolean cheackbtn = hp.cheakLearnMoreBTN();
 		Assert.assertEquals(cheackbtn,true, "learnMore button is visible");
