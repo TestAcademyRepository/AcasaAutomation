@@ -6,13 +6,13 @@
    <listener class-name="utility.ListenersClass"></listener>
    </listeners>
   
-   <test thread-count="5" name="Test">
+   <test thread-count="5" name="Test1">
    <classes>
    <class name="testcase.HomePageBody_TC"></class>
    </classes>
    </test> <!-- Test -->
    
-   <test thread-count="5" name="Test">
+   <test thread-count="5" name="Test2">
    <classes>
    <class name="testcase.Header_TC"></class>
    </classes>

@@ -15,7 +15,7 @@ public class HomePageBody_TC extends BaseTest
 		HomePageBody hp = new HomePageBody();
 		
 		boolean cheackbtn = hp.cheakLearnMoreBTN();
-		Assert.assertEquals(cheackbtn,true, "learnMore button is visible");
+		Assert.assertEquals(cheackbtn,true, "learnMore button is not visible");
 		
 		boolean clickbtn = hp.clickLearnMore();
 		Assert.assertEquals(clickbtn,true, "failed to click on btn");
