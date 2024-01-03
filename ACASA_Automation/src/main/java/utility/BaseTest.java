@@ -93,8 +93,8 @@ public class BaseTest
 		}
 		catch(Exception e)
 		{
-			ExtentManager.test.log(Status.FAIL,msg);
 			TestUtils.log().error("Exception generated:"+ e);
+			ExtentManager.test.log(Status.FAIL,msg);
 			result = false;
 		}
 		return result;

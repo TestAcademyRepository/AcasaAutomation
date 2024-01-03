@@ -16,6 +16,8 @@ public class Header extends BaseTest
 	@FindBy(xpath="//img[@src='https://www.acasa.ae/public/assets/logo.png.webp']")
 	private WebElement acasaLogoBTN;
 	
+	@FindBy(xpath="//a[@class='menu-item item_212']")
+	private WebElement ready_to_move_in_property_link; 
 	
 	
 	
@@ -31,7 +33,7 @@ public class Header extends BaseTest
 		boolean result=false;
 		try
 		{
-			BaseTest.explicitWaitMethod(driver, acasaLogoBTN);
+			explicitWaitMethod(driver, acasaLogoBTN);
 			isElementVisible(acasaLogoBTN,"ACASA Logo is present");
 			result=true;
 		}
@@ -61,7 +63,40 @@ public class Header extends BaseTest
 		return result;
 	}
 	
+	public boolean cheakRTMP_Link() 
+	{
+		boolean result=false;
+		try
+		{
+			explicitWaitMethod(driver, ready_to_move_in_property_link);
+			isElementVisible(ready_to_move_in_property_link,"ready_to_move_in_property_link is present");
+			result=true;
+		}
+		catch(Exception e)
+		{
+			TestUtils.log().error(e);
+			ExtentManager.test.log(Status.FAIL, "ready_to_move_in_property_link is not present");
+			result=false;
+		}
+	return result;
+	}
 	
+	public boolean clickRTMP_Link() 
+	{
+		boolean result=false;
+		try 
+		{
+			clickElement(ready_to_move_in_property_link, "ready_to_move_in_property_link is clickable");
+			result=true;
+		}
+		catch(Exception e) 
+		{
+			TestUtils.log().error(e);
+			ExtentManager.test.log(Status.FAIL, "ready_to_move_in_property_link is not clickable");
+			result=false;
+		}
+		return result;
+	}
 	
 	
 	

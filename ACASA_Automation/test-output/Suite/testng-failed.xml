@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testcase.HomePageBody_TC">
+      <class name="testcase.Header_TC">
         <methods>
           <include name="closeBrowser"/>
+          <include name="head"/>
           <include name="display1"/>
-          <include name="openBrowser"/>
           <include name="display2"/>
-          <include name="hpb"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- testcase.HomePageBody_TC -->
+      </class> <!-- testcase.Header_TC -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
