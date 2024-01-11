@@ -1,6 +1,6 @@
 package pageObject;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +13,7 @@ import utility.TestUtils;
 
 public class HomePageBody extends BaseTest
 {
-	BaseTest bt = new BaseTest();
+	
 	
 	@FindBy (xpath = "//a[contains(text(),'Learn More')]")
 	private WebElement learnMore;
@@ -23,23 +23,36 @@ public class HomePageBody extends BaseTest
 	
 	
 	
-	public HomePageBody(WebDriver driver) 
+	public HomePageBody() 
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
+	public boolean cheakLearnMoreBTN() 
+	{
+		boolean result=false;
+		try
+		{
+			BaseTest.explicitWaitMethod(driver, learnMore);
+			isElementVisible(learnMore, "learnMore button is visible");
+			result=true;
+		}
+		catch(Exception e)
+		{
+			TestUtils.log().error(e);
+			ExtentManager.test.log(Status.FAIL, "Learn more btn is not visible");
+			result=false;
+		}
+		return result;
+	}
 	
 	public boolean clickLearnMore() 
 	{
 		boolean result=false;
 		try 
 		{
-			BaseTest.explicitWaitMethod(driver, learnMore);
-			bt.isElementVisible(learnMore, "learnMore button is visible");
-			bt.clickElement(learnMore, "learnMore button is clickable");
-			
+			clickElement(learnMore, "learnMore button is clickable");
 			result=true;
-			
 		}
 		catch(Exception e) 
 		{
