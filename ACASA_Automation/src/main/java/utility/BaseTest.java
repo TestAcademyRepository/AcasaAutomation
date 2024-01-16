@@ -41,7 +41,7 @@ public class BaseTest
 
 		ChromeOptions options = new ChromeOptions();
 
-//		options.addArguments("--headless");
+		options.addArguments("--headless");
 		options.addArguments("enable-automation");
 		options.addArguments("disable-infobars");
 		options.addArguments("--disable-notifications");

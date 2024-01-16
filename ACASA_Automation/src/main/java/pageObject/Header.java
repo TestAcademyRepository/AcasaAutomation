@@ -16,6 +16,9 @@ public class Header extends BaseTest
 	@FindBy(xpath="//img[@src='https://www.acasa.ae/public/assets/logo.png.webp']")
 	private WebElement acasaLogoBTN;
 	
+	@FindBy(xpath="//a[@class='nav-link  dropdown  m-hide']")
+	private WebElement buyBTn;
+	
 	@FindBy(xpath="//a[@class='menu-item item_212']")
 	private WebElement ready_to_move_in_property_link; 
 	
