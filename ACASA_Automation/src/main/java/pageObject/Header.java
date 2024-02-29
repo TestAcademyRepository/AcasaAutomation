@@ -13,7 +13,7 @@ import utility.TestUtils;
 
 public class Header extends BaseTest
 {
-	@FindBy(xpath="//img[@src='https://www.acasa.ae/public/assets/logo.png.webp']")
+	@FindBy(xpath="//img[@src='https://www.acasa.ae/public/assets/logo.svg']")
 	private WebElement acasaLogoBTN;
 	
 	@FindBy(xpath="//a[@class='nav-link  dropdown  m-hide']")
@@ -30,6 +30,9 @@ public class Header extends BaseTest
 	{
 		PageFactory.initElements(driver, this);
 	}
+	
+
+
 	
 	public boolean cheakACASALogo() 
 	{

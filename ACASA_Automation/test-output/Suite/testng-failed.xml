@@ -4,17 +4,17 @@
   <listeners>
     <listener class-name="utility.ListenersClass"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test1(failed)">
     <classes>
       <class name="testcase.Header_TC">
         <methods>
           <include name="closeBrowser"/>
           <include name="head"/>
           <include name="display1"/>
-          <include name="display2"/>
           <include name="openBrowser"/>
+          <include name="display2"/>
         </methods>
       </class> <!-- testcase.Header_TC -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -24,5 +24,7 @@ public class Header_TC extends BaseTest
 		
 		boolean clickLink =hdr.clickRTMP_Link();
 		Assert.assertEquals(clickLink, true,"Failed to click on RTMP Link");
+		
+		
 	}
 }
