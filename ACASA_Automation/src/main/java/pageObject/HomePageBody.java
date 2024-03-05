@@ -15,7 +15,7 @@ public class HomePageBody extends BaseTest
 {
 	
 	
-	@FindBy (xpath = "//a[contains(text(),'Learn More')]")
+	@FindBy (xpath = "//a[contain(text(),'Learn More')]")
 	private WebElement learnMore;
 	
 	@FindBy (xpath = "//label[contains(@for,'pro_1932')]//label[1]")
@@ -34,14 +34,12 @@ public class HomePageBody extends BaseTest
 		try
 		{
 			BaseTest.explicitWaitMethod(driver, learnMore);
-			isElementVisible(learnMore, "learnMore button is visible");
-			result=true;
+			result = isElementVisible(learnMore, "learnMore button is visible");
 		}
 		catch(Exception e)
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "Learn more btn is not visible");
-			result=false;
 		}
 		return result;
 	}
@@ -51,14 +49,12 @@ public class HomePageBody extends BaseTest
 		boolean result=false;
 		try 
 		{
-			clickElement(learnMore, "learnMore button is clickable");
-			result=true;
+			result = clickElement(learnMore, "learnMore button is clickable");
 		}
 		catch(Exception e) 
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "Failed to click on learnMore button");
-			result=false;
 		}
 		return result;
 	}

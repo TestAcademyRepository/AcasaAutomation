@@ -32,22 +32,18 @@ public class Header extends BaseTest
 	}
 	
 
-
-	
-	public boolean cheakACASALogo() 
+	public boolean cheackACASALogo() 
 	{
 		boolean result=false;
 		try
 		{
 			explicitWaitMethod(driver, acasaLogoBTN);
-			isElementVisible(acasaLogoBTN,"ACASA Logo is present");
-			result=true;
+			result = isElementVisible(acasaLogoBTN,"ACASA Logo is present");
 		}
 		catch(Exception e)
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "ACASA Logo is not present");
-			result=false;
 		}
 	return result;
 	}
@@ -57,14 +53,12 @@ public class Header extends BaseTest
 		boolean result=false;
 		try 
 		{
-			clickElement(acasaLogoBTN, "ACASA Logo is clickable");
-			result=true;
+			result = clickElement(acasaLogoBTN, "ACASA Logo is clickable");
 		}
 		catch(Exception e) 
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "ACASA Logo is not clickable");
-			result=false;
 		}
 		return result;
 	}
@@ -75,14 +69,12 @@ public class Header extends BaseTest
 		try
 		{
 			explicitWaitMethod(driver, ready_to_move_in_property_link);
-			isElementVisible(ready_to_move_in_property_link,"ready_to_move_in_property_link is present");
-			result=true;
+			result = isElementVisible(ready_to_move_in_property_link,"ready_to_move_in_property_link is present");
 		}
 		catch(Exception e)
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "ready_to_move_in_property_link is not present");
-			result=false;
 		}
 	return result;
 	}
@@ -92,14 +84,12 @@ public class Header extends BaseTest
 		boolean result=false;
 		try 
 		{
-			clickElement(ready_to_move_in_property_link, "ready_to_move_in_property_link is clickable");
-			result=true;
+			result = clickElement(ready_to_move_in_property_link, "ready_to_move_in_property_link is clickable");
 		}
 		catch(Exception e) 
 		{
 			TestUtils.log().error(e);
 			ExtentManager.test.log(Status.FAIL, "ready_to_move_in_property_link is not clickable");
-			result=false;
 		}
 		return result;
 	}
