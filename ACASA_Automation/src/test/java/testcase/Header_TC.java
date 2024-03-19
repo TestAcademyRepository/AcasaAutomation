@@ -5,15 +5,16 @@ import org.testng.annotations.Test;
 
 import pageObject.Header;
 import utility.BaseTest;
+import utility.TestUtils;
 
 public class Header_TC extends BaseTest
 {
-	@Test(description = "Header_TC")
+	@Test(description = "Header_Test Case")
 	public void head() 
 	{
 		Header hdr = new Header();
 		
-		boolean cheaklogo = hdr.cheakACASALogo();
+		boolean cheaklogo = hdr.cheackACASALogo();
 		Assert.assertEquals(cheaklogo, true,"ACASA Logo is not present");
 		
 		boolean clickLogo = hdr.clickACASAlogo();
@@ -22,7 +23,7 @@ public class Header_TC extends BaseTest
 		boolean cheakLink = hdr.cheakRTMP_Link();
 		Assert.assertEquals(cheakLink, true,"Link is not present");
 		
-		boolean clickLink =hdr.clickRTMP_Link();
+		boolean clickLink = hdr.clickRTMP_Link();
 		Assert.assertEquals(clickLink, true,"Failed to click on RTMP Link");
 		
 		
