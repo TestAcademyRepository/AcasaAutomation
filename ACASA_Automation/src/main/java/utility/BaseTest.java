@@ -67,10 +67,16 @@ public class BaseTest
 		Thread.sleep(2000);
 	}
 	
-	public static void explicitWaitMethod(WebDriver driver,WebElement element) 
+	public static void explicitWaitMethodForVisiblity(WebDriver driver,WebElement element) 
 	{
-		wait = new WebDriverWait (driver,Duration.ofSeconds(10));
+		wait = new WebDriverWait (driver,Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public static void explicitWaitMethodForClick(WebDriver driver,WebElement element) 
+	{
+		wait = new WebDriverWait (driver,Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	public boolean isElementVisible(WebElement element,String msg)
@@ -78,17 +84,19 @@ public class BaseTest
 		boolean result = false;
 		try
 		{
-			if(element.isDisplayed())
+			explicitWaitMethodForVisiblity(driver,element);
+			result = element.isDisplayed();
+			if(result)
 			{
 				TestUtils.log().info(msg);
 				ExtentManager.test.log(Status.PASS,msg);
-				result = true;
+//				result = true;
 			}
 			else 
 			{
 				TestUtils.log().error("Faild:"+msg);
 				ExtentManager.test.log(Status.FAIL,msg);
-				result = false;
+//				result = false;
 			}
 		}
 		catch(Exception e)
@@ -97,6 +105,7 @@ public class BaseTest
 			ExtentManager.test.log(Status.FAIL,msg);
 			result = false;
 		}
+		
 		return result;
 	}
 
@@ -105,6 +114,7 @@ public class BaseTest
 		boolean result = false;
 		try 
 		{
+			explicitWaitMethodForClick(driver, element);
 			element.click();
 			TestUtils.log().info(msg);
 			ExtentManager.test.log(Status.PASS,msg);

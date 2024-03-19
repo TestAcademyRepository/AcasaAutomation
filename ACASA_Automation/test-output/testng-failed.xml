@@ -8,11 +8,11 @@
     <classes>
       <class name="testcase.Header_TC">
         <methods>
-          <include name="closeBrowser"/>
           <include name="head"/>
+          <include name="closeBrowser"/>
           <include name="display1"/>
-          <include name="openBrowser"/>
           <include name="display2"/>
+          <include name="openBrowser"/>
         </methods>
       </class> <!-- testcase.Header_TC -->
     </classes>

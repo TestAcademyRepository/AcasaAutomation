@@ -39,7 +39,7 @@ public class Header extends BaseTest
 		boolean result=false;
 		try
 		{
-			explicitWaitMethod(driver, acasaLogoBTN);
+//			explicitWaitMethod(driver, acasaLogoBTN);
 			isElementVisible(acasaLogoBTN,"ACASA Logo is present");
 			result=true;
 		}
@@ -74,7 +74,7 @@ public class Header extends BaseTest
 		boolean result=false;
 		try
 		{
-			explicitWaitMethod(driver, ready_to_move_in_property_link);
+			explicitWaitMethodForVisiblity(driver, ready_to_move_in_property_link);
 			isElementVisible(ready_to_move_in_property_link,"ready_to_move_in_property_link is present");
 			result=true;
 		}
