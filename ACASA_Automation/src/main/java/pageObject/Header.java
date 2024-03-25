@@ -34,14 +34,14 @@ public class Header extends BaseTest
 
 
 	
-	public boolean cheakACASALogo() 
+	public boolean checkACASALogo() 
 	{
 		boolean result=false;
 		try
 		{
 //			explicitWaitMethod(driver, acasaLogoBTN);
-			isElementVisible(acasaLogoBTN,"ACASA Logo is present");
-			result=true;
+			result = isElementVisible(acasaLogoBTN,"ACASA Logo is present");
+			
 		}
 		catch(Exception e)
 		{
@@ -57,8 +57,8 @@ public class Header extends BaseTest
 		boolean result=false;
 		try 
 		{
-			clickElement(acasaLogoBTN, "ACASA Logo is clickable");
-			result=true;
+			result = clickElement(acasaLogoBTN, "ACASA Logo is clickable");
+		
 		}
 		catch(Exception e) 
 		{
@@ -74,9 +74,9 @@ public class Header extends BaseTest
 		boolean result=false;
 		try
 		{
-			explicitWaitMethodForVisiblity(driver, ready_to_move_in_property_link);
-			isElementVisible(ready_to_move_in_property_link,"ready_to_move_in_property_link is present");
-			result=true;
+//			explicitWaitMethodForVisiblity(driver, ready_to_move_in_property_link);
+			result = isElementVisible(ready_to_move_in_property_link,"ready_to_move_in_property_link is present");
+			
 		}
 		catch(Exception e)
 		{
@@ -92,8 +92,8 @@ public class Header extends BaseTest
 		boolean result=false;
 		try 
 		{
-			clickElement(ready_to_move_in_property_link, "ready_to_move_in_property_link is clickable");
-			result=true;
+			result = clickElement(ready_to_move_in_property_link, "ready_to_move_in_property_link is clickable");
+			
 		}
 		catch(Exception e) 
 		{
