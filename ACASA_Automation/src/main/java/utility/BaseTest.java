@@ -18,7 +18,8 @@ import org.testng.annotations.BeforeSuite;
 import com.aventstack.extentreports.Status;
 
 public class BaseTest 
-{
+{ 
+	//usman
 	public static WebDriver driver = null;
 	public static WebDriverWait wait;
 	
