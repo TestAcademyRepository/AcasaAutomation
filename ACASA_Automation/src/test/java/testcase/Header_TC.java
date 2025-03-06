@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import pageObject.Header;
 import utility.BaseTest;
-import utility.TestUtils;
 
 public class Header_TC extends BaseTest
 {
@@ -14,8 +13,9 @@ public class Header_TC extends BaseTest
 	{
 		Header hdr = new Header();
 		
-		boolean cheaklogo = hdr.cheackACASALogo();
-		Assert.assertEquals(cheaklogo, true,"ACASA Logo is not present");
+		
+		boolean checklogo = hdr.checkACASALogo();
+		Assert.assertEquals(checklogo, true,"ACASA Logo is not present");
 		
 		boolean clickLogo = hdr.clickACASAlogo();
 		Assert.assertEquals(clickLogo, true,"Failed to click on ACASA Logo");
